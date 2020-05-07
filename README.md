@@ -1,4 +1,4 @@
-# ESP32 Arduino Lib Builder [![Build Status](https://travis-ci.org/espressif/esp32-arduino-lib-builder.svg?branch=master)](https://travis-ci.org/espressif/esp32-arduino-lib-builder)
+# ESP32 Arduino Lib Builder. Build OK
 
 
 Jacques Fork to use the branch latest-3.3 of https://github.com/espressif/arduino-esp32
