@@ -18,7 +18,7 @@ jobs:
     - name: Install Python Wheel
       run: pip install wheel
     - name: Build Arduino Libs
-      run: bash ./build.sh
+      run: bash ./init_build.sh
     - name: Upload archive
       uses: actions/upload-artifact@v1
       with:
