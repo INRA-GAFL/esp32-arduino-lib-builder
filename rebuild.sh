@@ -3,6 +3,8 @@
 
 echo "****************** install latest-3.3 ******************************"
 source tools/config.sh
+source ./tools/install-esp-idf.sh
+
 make clean
 rm -fr build out dist
 
