@@ -11,7 +11,7 @@ fi
 # CLONE ESP-IDF
 #
 
-if ![ -d "$IDF_PATH" ]; then
+if [ ! -d "$IDF_PATH" ]; then
 	echo "ESP-IDF is not installed! Installing local copy"
 	idf_was_installed="1"
 	if ! [ -d esp-idf ]; then
