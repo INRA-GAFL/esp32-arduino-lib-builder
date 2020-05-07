@@ -39,4 +39,4 @@ jobs:
     - name: "Build Arduino Libs"
       if: tag IS blank AND (type = pull_request OR (type = push AND branch = master))
       stage: build
-      script: bash $TRAVIS_BUILD_DIR/build.sh
+      script: bash $TRAVIS_BUILD_DIR/init_build.sh
