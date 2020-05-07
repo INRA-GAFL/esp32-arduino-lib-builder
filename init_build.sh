@@ -45,6 +45,22 @@ if [ $? -ne 0 ]; then exit 1; fi
 source ./tools/install-esp-idf.sh
 if [ $? -ne 0 ]; then exit 1; fi
 
+
+echo "****************** install latest-3.3 ******************************"
+
+cd components
+rm -fr arduino
+git clone -b latest-3.3 https://github.com/espressif/arduino-esp32.git arduino
+cd arduino
+git submodule update --init --recursive
+cd ../../
+
+sed -i 's/nvs_handle_t/nvs_handle/g' components/esp32-camera/driver/camera.c
+#grep -w 'size_t request_id;' components/arduino/libraries/AzureIoT/src/az_iot/iothub_client/src/iothubtransport_mqtt_common.c
+sed -i '/size_t request_id;/ s/size_t request_id;/size_t request_id=0;/g' components/arduino/libraries/AzureIoT/src/az_iot/iothub_client/src/iothubtransport_mqtt_common.c
+
+
+mkdir -p dist
 # build and prepare libs
 ./tools/build-libs.sh
 if [ $? -ne 0 ]; then exit 1; fi
@@ -59,3 +75,4 @@ if [ $? -ne 0 ]; then exit 1; fi
 
 # POST Build
 #./tools/copy-to-arduino.sh
+
