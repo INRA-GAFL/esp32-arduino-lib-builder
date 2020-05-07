@@ -1,7 +1,9 @@
-# ESP32 Arduino Lib Builder. Build OK
+# ESP32 Arduino Lib Builder. ![ESP32 Arduino Libs CI](https://github.com/jacqueslagnel/esp32-arduino-lib-builder/workflows/ESP32%20Arduino%20Libs%20CI/badge.svg)
 
 
-Jacques Fork to use the branch latest-3.3 of https://github.com/espressif/arduino-esp32
+Jacques Fork from https://github.com/espressif/esp32-arduino-lib-builder
+
+Use the branch latest-3.3 of https://github.com/espressif/arduino-esp32
 
 This repository contains the scripts that produce the libraries included with esp32-arduino.
 
