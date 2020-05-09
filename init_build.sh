@@ -61,6 +61,8 @@ git clone https://github.com/espressif/arduino-esp32.git arduino
 cd arduino
 git submodule update --init --recursive
 cd ../../
+patch components/arduino/libraries/WiFi/src/WiFiSTA.cpp < WiFiSTA.cpp.patch
+patch components/arduino/libraries/WiFi/src/ETH.cpp < ETH.cpp.patch 
 
 sed -i 's/nvs_handle_t/nvs_handle/g' components/esp32-camera/driver/camera.c
 #grep -w 'size_t request_id;' components/arduino/libraries/AzureIoT/src/az_iot/iothub_client/src/iothubtransport_mqtt_common.c
