@@ -1,0 +1,13 @@
+--- arduino/libraries/WiFi/src/WiFiSTA.cpp	2020-05-09 10:15:26.688819746 +0200
++++ ../esp32-arduino-lib-builder/components/arduino/libraries/WiFi/src/WiFiSTA.cpp	2020-05-09 08:46:31.918199887 +0200
+@@ -488,8 +488,8 @@
+     if(WiFiGenericClass::getMode() == WIFI_MODE_NULL){
+         return IPAddress();
+     }
+-    ip_addr_t dns_ip = dns_getserver(dns_no);
+-    return IPAddress(dns_ip.u_addr.ip4.addr);
++    const ip_addr_t * dns_ip = dns_getserver(dns_no);
++    return IPAddress(dns_ip->u_addr.ip4.addr);
+ }
+
+ /**
