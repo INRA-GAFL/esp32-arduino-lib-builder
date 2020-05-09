@@ -50,7 +50,14 @@ echo "****************** install latest-3.3 ******************************"
 
 cd components
 rm -fr arduino
-git clone -b latest-3.3 https://github.com/espressif/arduino-esp32.git arduino
+#error build https://github.com/espressif/arduino-esp32/issues/3760
+
+#with correction for components/arduino/libraries/WiFi/src/WiFiAP.cpp & ETH.cpp
+#but not working with platformio
+#git clone -b latest-3.3 https://github.com/espressif/arduino-esp32.git arduino
+
+#working ok with platformio
+git clone https://github.com/espressif/arduino-esp32.git arduino
 cd arduino
 git submodule update --init --recursive
 cd ../../
